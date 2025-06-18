@@ -1,0 +1,12 @@
+<!doctype html>
+<title>{{ section }}</title>
+<h1>Section: {{ section }}</h1>
+<ul>
+  {% for p in posts %}
+  <li>
+    <a href="{{ p['url'] }}">{{ p['text'][:50] }}</a>
+    [<a href="{{ url_for('admin', post_id=p['id']) }}">edit</a>]
+  </li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('index') }}">Back</a>
