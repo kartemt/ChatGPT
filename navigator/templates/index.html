@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Navigator</title>
+<h1>Sections</h1>
+<ul>
+  {% for s in sections %}
+  <li><a href="{{ url_for('section_view', section=s['section']) }}">{{ s['section'] }} ({{ s['count'] }})</a></li>
+  {% endfor %}
+</ul>

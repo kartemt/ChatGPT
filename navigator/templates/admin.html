@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Edit Post</title>
+<h1>Edit Post {{ post['id'] }}</h1>
+<form method="post">
+  <label>Section:
+    <select name="section">
+    {% for s in sections %}
+      <option value="{{ s['section'] }}" {% if s['section'] == post['section'] %}selected{% endif %}>{{ s['section'] }}</option>
+    {% endfor %}
+    </select>
+  </label>
+  <button type="submit">Save</button>
+</form>
+<a href="{{ url_for('section_view', section=post['section']) }}">Cancel</a>
